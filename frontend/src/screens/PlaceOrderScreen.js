@@ -30,8 +30,6 @@ function PlaceOrderScreen({ history }) {
   if (!cart.paymentMethod) {
     history.push("/payment");
   }
-
- 
    
   const data = {
     orderItems: cart.cartItems,
@@ -42,7 +40,6 @@ function PlaceOrderScreen({ history }) {
     taxPrice: taxPrice.toFixed(2).toString(),
     totalPrice: totalPrice.toString(),
   };
-  
   
   // console.log(data)
   const placeOrder = () => {

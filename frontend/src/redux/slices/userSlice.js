@@ -77,7 +77,6 @@ const userSlice = createSlice({
       state.loading = false;
       state.error = null;
       localStorage.removeItem("userInfo");
-
     },
     deleteUserFailure(state, action) {
       state.loading = false;
@@ -160,11 +159,11 @@ export const deleteUser = (userId) => async (dispatch) => {
   } catch (error) {
     dispatch(deleteUserFailure(error.message));
   } 
-
 };
 
 export const logout = () => (dispatch) => {
   dispatch(userSlice.actions.logoutSuccess());
 };
+
 export const { reducer } = userSlice;
 export default userSlice;

@@ -5,7 +5,6 @@ class ProductAPI {
     try {
       const { data } = await axios.get(`/api/products${keyword}`, {
         params: {
-       
           page: pageNumber
         }
       });

@@ -16,8 +16,7 @@ import { logout } from "../redux/slices/userSlice";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
-    backgroundColor: "#212121",
-
+    backgroundColor: "black",
   },
   grow: {
     flexGrow: 1,
@@ -28,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   link: {
     textDecoration: "none",
     color: "#fff",
+  },
+  padding: {
+    padding: "5px",
   },
 }));
 
@@ -53,7 +55,6 @@ const Header = () => {
     console.log("hi")
     handleMenuClose();
     window.location.reload(); // Reload the page
-
   };
 
   return (
@@ -69,7 +70,7 @@ const Header = () => {
               }}
             />
           </Link>
-          <div style={{ marginLeft: "5vw" }}>
+          <div style={{ marginLeft: "2vw" }}>
             <SearchBox />
           </div>
           <div className={classes.grow} />

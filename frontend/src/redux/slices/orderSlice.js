@@ -37,7 +37,6 @@ const orderSlice = createSlice({
       state.loading = false;
       state.error = null;
       console.log(state, action)
-
     },
     createOrderFailure(state, action) {
       state.loading = false;

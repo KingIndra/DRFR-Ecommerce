@@ -40,7 +40,7 @@ function ShippingScreen({ history }) {
         country,
       })
     );
-
+    
     // PUSHING USER TO PAYMENTS PAGE AFTER SAVING ADDRESS
     history.push("./payment");
   };

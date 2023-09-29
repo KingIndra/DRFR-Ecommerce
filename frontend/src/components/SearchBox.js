@@ -7,12 +7,11 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-     
-     
     borderRadius: theme.shape.borderRadius,
     backgroundColor: "#fff",
     boxShadow: "0 0 3px 1px rgba(0, 0, 0, 0.1)",
     width: "100%",
+    height: "100%",
   },
   input: {
     marginLeft: theme.spacing(2),
@@ -36,22 +35,20 @@ function SearchBox() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-   
       history.push(`/?keyword=${keyword}&page=1`);
-    
   };
 
   return (
     <Box component="form" onSubmit={submitHandler} className={classes.root}>
       <InputBase
-        placeholder="Search for products..."
+        placeholder = "Grear 5..."
         className={classes.input}
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
       />
-      <IconButton type="submit" className={classes.iconButton} aria-label="search">
+      {/* <IconButton type="submit" className={classes.iconButton} aria-label="search">
         <SearchIcon  />
-      </IconButton>
+      </IconButton> */}
     </Box>
   );
 }

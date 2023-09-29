@@ -21,8 +21,6 @@ from api.serializers import UserSerializer,UserSerializerWithToken
 
 
 
-
-
 # JWT Views
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     def validate(self, attrs):
@@ -34,13 +32,14 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
             data[k] =v
 
         return data
+    
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
 
         # Add custom claims
         token['username'] = user.username
-        token['message'] = "Hello Proshop"
+        token['name'] = user.first_name
         # ...
 
         return token
@@ -84,7 +83,7 @@ def registerUser(request):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def getUserProfile(request):
-    user =request.user 
+    user = request.user 
     serializer = UserSerializer(user,many = False)
     return Response(serializer.data)
 
@@ -102,8 +101,6 @@ def updateUserProfile(request):
         user.password= make_password(data['password'])
     user.save()
     return Response(serializer.data)
-
- 
 
  
 @api_view(['DELETE'])

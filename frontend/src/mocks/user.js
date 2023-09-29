@@ -26,7 +26,6 @@ class UserAPI {
       const config = {
         headers: {
           'Content-Type': 'application/json',
-         
         }
       };
   
@@ -38,7 +37,6 @@ class UserAPI {
         : error.message;
     }
   }
-  
 
   async updateUser(userId, updateData) {
     try {
@@ -68,9 +66,9 @@ class UserAPI {
           Authorization: `Bearer ${token}`,
         },
       };
-
       await axios.delete(`/api/users/delete/${userId}/`, config);
-    } catch (error) {
+    } 
+    catch (error) {
       throw error.response && error.response.data.detail
         ? error.response.data.detail
         : error.message;

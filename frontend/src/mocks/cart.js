@@ -13,5 +13,3 @@ class CartAPI {
 const cartAPI = new CartAPI();
 
 export default cartAPI;
-
-

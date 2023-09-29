@@ -6,20 +6,19 @@ const cartSlice = createSlice({
   initialState: {
     cartItems: JSON.parse(localStorage.getItem("cartItems")) || [],
     shippingAddress: {},
+    paymentMethod: {},
   },
   reducers: {
     setCartItems(state, action) {
       state.cartItems = action.payload;
       console.log(state.cartItems)
-
       localStorage.setItem("cartItems", JSON.stringify(action.payload));
     },
     removeCartItem(state, action) {
       const id = action.payload;
       state.cartItems = state.cartItems.filter((x) => x._id !== id);
       localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-    },
-    
+    }, 
     setShippingAddress(state, action) {
       state.shippingAddress = action.payload;
       localStorage.setItem("shippingAddress", JSON.stringify(action.payload));

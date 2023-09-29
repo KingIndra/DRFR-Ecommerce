@@ -55,7 +55,6 @@ function Rating({ value, text, color }) {
           <StarBorder style={{ color }} fontSize="small" />
         )}
       </Box>
-
      
     </Box>
      <Typography variant="subtitle2" color="textSecondary">{text ? text : ""}</Typography>

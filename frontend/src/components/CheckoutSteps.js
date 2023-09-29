@@ -33,7 +33,6 @@ function CheckoutSteps({ step1, step2, step3  }) {
         {step2 ? "Shipping" : "Shipping (Incomplete)"}
       </Link>
 
-   
       <Typography
         color={step3 ? "textPrimary" : "textSecondary"}
         className={`${classes.link} ${step3 ? classes.activeLink : ""}`}

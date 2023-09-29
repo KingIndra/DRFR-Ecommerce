@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 import { Row, Col, Image, ListGroup, Button, Card, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
-import {   removeFromCart } from "../redux/slices/cartSlice";
+import { removeFromCart } from "../redux/slices/cartSlice";
 
-function CartScreen({   history }) {
- 
+function CartScreen({ history }) {
 
   const dispatch = useDispatch();
-
-   
 
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;

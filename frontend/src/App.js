@@ -35,6 +35,7 @@ function App() {
       <Container>
         <main className="py-3">
           <Route exact path="/" component={HomeScreen} />
+          
           <Route path="/page/:pageNumber" component={HomeScreen} />
 
           <Route path="/login" component={LoginScreen} />

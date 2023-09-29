@@ -100,10 +100,7 @@ const itemsPrice = calculateItemsPrice();
   const successPaymentHandler = (paymentResult) => {
     dispatch(payOrder(orderDetails._id, paymentResult));
     console.log(orderDetails._id)
-
   };
-
-   
 
   return loading ? (
     <Loader />

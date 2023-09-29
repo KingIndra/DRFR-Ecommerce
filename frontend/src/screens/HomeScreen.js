@@ -8,6 +8,9 @@ import ProductCarousel from "../components/ProductCarousel";
 import { fetchProductList } from "../redux/slices/productSlice";
 import Paginate from "../components/Paginate";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import VideoPlayer from "../components/VideoPlayer";
+
+
 function HomeScreen({ history }) {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.product.productList);
@@ -25,17 +28,20 @@ function HomeScreen({ history }) {
     dispatch(fetchProductList(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
-
   return (
     <div>
+      <VideoPlayer token={JSON.parse(localStorage.getItem("userInfo"))?.access}/>
+      <br></br>
       {!keyword && (
         <>
-          <div style={{ fontWeight: "bold", fontSize: "25px", color: "black", fontFamily: "MozAnimationDelay" }}>TOP-RATED PRODUCTS</div>
+          <div style={{ fontWeight: "bold", fontSize: "25px", color: "black", fontFamily: "MozAnimationDelay" }}>
+          </div>
           <ProductCarousel />
         </>
       )}
-
-      <div style={{ fontWeight: "bold", fontSize: "25px", color: "black", fontFamily: "MozAnimationDelay" }}>LATEST PRODUCTS</div>
+      <div style={{ fontWeight: "bold", fontSize: "25px", color: "black", fontFamily: "MozAnimationDelay" }}>
+      </div>
+      <br></br>
       {loading ? (
         <Loader />
       ) : error ? (

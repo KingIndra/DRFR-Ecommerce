@@ -2,7 +2,7 @@ import {
     useDispatch as useReduxDispatch,
     useSelector as useReduxSelector
   } from 'react-redux';
-import { configureStore,applyMiddleware } from '@reduxjs/toolkit';
+import { configureStore, applyMiddleware } from '@reduxjs/toolkit';
 import { rootReducer } from './rootReducer';
 import thunk from "redux-thunk"
   
@@ -17,4 +17,3 @@ export const useSelector = useReduxSelector;
 export const useDispatch = () => useReduxDispatch();
 
 export default store
-  
